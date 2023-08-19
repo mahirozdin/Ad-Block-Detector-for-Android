@@ -2,12 +2,23 @@ plugins {
     id 'com.android.library'
     id 'maven-publish'
 }
-
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+            }
+        }
+    }
+}
 android {
     namespace 'com.bubiapps.adblockdetector'
     compileSdk 34
     testFixtures {
         enable = true
+    }
+    publishing {
+        singleVariant("release")
     }
 
 

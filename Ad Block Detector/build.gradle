@@ -6,6 +6,10 @@ plugins {
 android {
     namespace 'com.bubiapps.adblockdetector'
     compileSdk 34
+    testFixtures {
+        enable = true
+    }
+
 
     defaultConfig {
         minSdk 16

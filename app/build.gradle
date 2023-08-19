@@ -3,8 +3,16 @@ plugins {
 }
 
 android {
-    namespace 'com.example.adblockdetectorexampleapp'
+    namespace 'com.bubiapps.adblockdetector'
     compileSdk 34
+    testFixtures {
+        enable = true
+    }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 
     defaultConfig {
         applicationId "com.example.adblockdetectorexampleapp"
